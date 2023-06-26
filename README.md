@@ -1,3 +1,5 @@
+インストール 
+https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/url-change-5ch.user.js
 # 5ch-script-for-me
 自分用の5ch open2ch スクリプト  
 好みのscript manager でインストールしてください。　  
