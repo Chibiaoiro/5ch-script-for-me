@@ -1,9 +1,9 @@
 インストール 
 https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/url-change-5ch.user.js
 # 5ch-script-for-me
-自分用の5ch open2ch スクリプト  
+自分用の5chとopen2chのスクリプト、悪く言ったらただの自己満。  
 好みのscript manager でインストールしてください。　  
-面倒臭いからこれ以上何かしたりしないです。 使用とサポートは自己責任で。  
+めんどくさいからこれ以上何かしたりしないです。 使用とサポートは自己責任で。  
 # パーツに分けた解説
 * 5ch 
   * //5ch.home.page  
