@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         5ch-script-for-me
 // @namespace    github.com
-// @version      1.0.1
+// @version      1.0.2
 // @description  5ch, open2chで簡単なurlの改変を行うスクリプト
 // @author       Chibiaoiro
 // @match        https://*.open2ch.net/*
