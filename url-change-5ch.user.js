@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name         Combined URL Modification Script by chat but better and readable
 // @namespace    your-namespace
-// @version      1.0
+// @version      1.0.1
 // @description  Modify URLs on open2ch.net and 5ch.net by removing "/l10" or "/l50" if present at the end of the URL, respectively, excluding pages with "/read.cgi/". Also, append "/c/" after "/read.cgi/" if present in the URL, limiting it to one "/c/"
 // @author       Your Name
 // @match        https://*.open2ch.net/*
 // @match        https://*.5ch.net/*
 // @match        https://*.bbspink.net/*
 // @grant        none
+// @updateURL    https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/url-change-5ch.user.js
+// @downloadURL  https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/url-change-5ch.user.js
 // ==/UserScript==
 
 (function() {
