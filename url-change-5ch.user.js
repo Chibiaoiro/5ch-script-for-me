@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         5ch-script-for-me
-// @namespace    github.com
-// @version      1.0.2
+// @namespace    idk
+// @version      1.0.3
 // @description  5ch, open2chで簡単なurlの改変を行うスクリプト
 // @author       Chibiaoiro
 // @match        https://*.open2ch.net/*
@@ -72,6 +72,7 @@
                             console.log("The [open2ch.l50] worked on this site");
                         }
                     }
+
                });
             }
         }
