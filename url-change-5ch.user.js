@@ -7,6 +7,7 @@
 // @match        https://*.open2ch.net/*
 // @match        https://*.5ch.net/*
 // @grant        none
+// @license      MIT
 // @supportURL   https://github.com/Chibiaoiro/5ch-script-for-me/
 // @updateURL    https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/url-change-5ch.user.js
 // @downloadURL  https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/url-change-5ch.user.js
