@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         5ch-script-for-me
+// @name         5ch-open2ch-URL-改変スクリプト
 // @namespace    idk
 // @version      1.0.6
 // @description  5ch, open2chで簡単なurlの改変を行うスクリプト. built with help of ChatGPT.
