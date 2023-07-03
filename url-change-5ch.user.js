@@ -6,7 +6,7 @@
 // @author       Chibiaoiro
 // @match        https://*.open2ch.net/*
 // @match        https://*.5ch.net/*
-// @match        https://*.bbspink.net/*
+// @match        https://*.bbspink.com/*
 // @grant        none
 // @updateURL    https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/url-change-5ch.user.js
 // @downloadURL  https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/url-change-5ch.user.js
