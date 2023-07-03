@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         5ch-open2ch-URL-改変スクリプト
 // @namespace    idk
-// @version      1.0.7
-// @description  5ch, open2chで簡単なurlの改変を行うスクリプト. built with help of ChatGPT.
+// @version      1.0.8
+// @description  5ch, open2chで簡単なurlの改変を行うスクリプト. (クラシック版強制、全表示強制）built with help of ChatGPT.
 // @author       Chibiaoiro
 // @match        https://*.open2ch.net/*
 // @match        https://*.5ch.net/*
