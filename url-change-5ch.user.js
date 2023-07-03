@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         5ch-script-for-me
 // @namespace    idk
-// @version      1.0.4
+// @version      1.0.5
 // @description  5ch, open2chで簡単なurlの改変を行うスクリプト
 // @author       Chibiaoiro
 // @match        https://*.open2ch.net/*
@@ -29,7 +29,7 @@
                     var href = link.getAttribute('href');
 
                     //5ch.net
-                    if (currentUrl.includes("5ch.net" || "bbspink.net")){
+                    if (currentUrl.includes("5ch.net" || "bbspink.com")){
                          //5ch.home.page
                         if (currentUrl == 'https://5ch.net/' && !href.includes("/read.cgi/c/")){
                           var modifiedUrl = href.replace("/read.cgi/", "/read.cgi/c/");
