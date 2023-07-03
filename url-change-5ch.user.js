@@ -2,7 +2,7 @@
 // @name         5ch-script-for-me
 // @namespace    idk
 // @version      1.0.6
-// @description  5ch, open2chで簡単なurlの改変を行うスクリプト
+// @description  5ch, open2chで簡単なurlの改変を行うスクリプト. built with help of ChatGPT.
 // @author       Chibiaoiro
 // @match        https://*.open2ch.net/*
 // @match        https://*.5ch.net/*
