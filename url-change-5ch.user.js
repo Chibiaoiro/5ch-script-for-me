@@ -36,7 +36,7 @@
                           var modifiedUrl = href.replace("/read.cgi/", "/read.cgi/c/");
                           link.setAttribute('href', modifiedUrl);
                           console.log("The [5ch.home.page] worked on this site");
-                        }//5ch.primary
+                        }//5ch.primary(この行削除で5chでの強制全表示の機能無効化)
                         if ((href.includes("/l50")) && !currentUrl.includes("/test/read.cgi/")){
                           var modifiedUrl = href.replace("/read.cgi/", "/read.cgi/c/");
                           modifiedUrl = modifiedUrl.replace("/l50", "");
@@ -55,7 +55,7 @@
                         }
                     }
 
-                    //open2ch
+                    //open2ch(この行削除でopen2chでの強制全表示の機能無効化)
                     if ((window.location.hostname.includes("open2ch.net")) && !currentUrl.includes("/read.cgi")){
                         if (href.includes("/l30")){
                             var modifiedUrl = href.replace("/l30", "/")
