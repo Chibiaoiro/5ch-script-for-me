@@ -6,6 +6,9 @@
 // @description  スクリプト対策
 // @match        https://*.5ch.net/*
 // @grant        none
+// @updateURL    https://raw.githubusercontent.com/Chibiaoiro/5ch-scripts/main/filter-script.user.js
+// @downloadURL  https://raw.githubusercontent.com/Chibiaoiro/5ch-scripts/main/filter-script.user.js
+// @supportURL   https://raw.githubusercontent.com/Chibiaoiro/5ch-scripts/main/filter-script.user.js
 // ==/UserScript==
 
 (function() {
