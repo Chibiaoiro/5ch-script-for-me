@@ -57,7 +57,7 @@
     filteredPostsCount = 0;
     posts.forEach(post => {
       const escapedSpan = post.querySelector('span.escaped');
-      if (escapedSpan && escapedSpan.textContent.trim() === '------') {
+      if (escapedSpan && escapedSpan.textContent.trim() >= '------') {
         const nextElement = post.nextElementSibling;
         if (nextElement && nextElement.tagName.toLowerCase() === 'br') {
           nextElement.style.display = visible ? 'block' : 'none';
