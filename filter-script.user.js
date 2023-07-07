@@ -2,7 +2,7 @@
 // @name         5ch Filter Script
 // @namespace
 // @author       Chibiaoiro
-// @version      1.0
+// @version      1.0.1
 // @description  スクリプト対策
 // @match        https://*.5ch.net/test/read.cgi/*
 // @grant        none
