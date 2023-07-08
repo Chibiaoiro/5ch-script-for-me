@@ -2,12 +2,10 @@
 // @name         5ch Filter Script
 // @namespace
 // @author       Chibiaoiro
-// @author       ChatGPT
 // @version      1.0.1
 // @description  スクリプト対策
 // @match        https://*.5ch.net/test/read.cgi/*
 // @grant        none
-// @license      MIT
 // @updateURL    https://raw.githubusercontent.com/Chibiaoiro/5ch-scripts/main/filter-script.user.js
 // @downloadURL  https://raw.githubusercontent.com/Chibiaoiro/5ch-scripts/main/filter-script.user.js
 // @supportURL   https://raw.githubusercontent.com/Chibiaoiro/5ch-scripts/main/filter-script.user.js
@@ -65,6 +63,7 @@
           nextElement.style.display = visible ? 'block' : 'none';
         }
         post.style.display = visible ? 'block' : 'none';
+        post.style.background = visible ? '#ffcccc' : '#efefef';
         filteredPostsCount++;
       }
     });
