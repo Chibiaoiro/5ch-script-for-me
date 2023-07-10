@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         5ch Filter Script
-// @namespace
+// @name         5ch 横棒のレスを消すやつ
+// @namespace    idk
 // @author       Chibiaoiro
-// @version      1.0.1
+// @version      1.0.2
 // @description  スクリプト対策
 // @match        https://*.5ch.net/test/read.cgi/*
 // @grant        none
