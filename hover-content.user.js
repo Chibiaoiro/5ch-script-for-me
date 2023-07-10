@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hover Popup Links
 // @namespace    https://example.com
-// @version      1.0
+// @version      1.0.1
 // @description  昔の5chみたいな？　知らんけどポップアップ出てくるやつ
 // @match        https://*.5ch.net/*
 // @grant        none
@@ -23,14 +23,19 @@
     // Function to extract the 'div.post' element from the target URL
     function extractPostContent(url, callback) {
         fetch(url)
-            .then(response => response.text())
-            .then(data => {
-                var tempDiv = document.createElement('div');
-                tempDiv.innerHTML = new DOMParser().parseFromString(data, 'text/html').body.innerHTML;
-                var postElement = tempDiv.querySelector('div.post');
-                if (postElement) {
-                    callback(postElement);
-                }
+            .then(response => response.blob())
+            .then(blob => {
+                const reader = new FileReader();
+                reader.onloadend = function() {
+                    const data = reader.result;
+                    var tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = new DOMParser().parseFromString(data, 'text/html').body.innerHTML;
+                    var postElement = tempDiv.querySelector('div.post');
+                    if (postElement) {
+                        callback(postElement);
+                    }
+                };
+                reader.readAsText(blob, 'shift-jis');
             })
             .catch(error => console.error(error));
     }
@@ -118,7 +123,7 @@
                     contentContainer.style.display = 'none';
                     contentContainer.innerHTML = '';
                 }
-            }, 300);
+            }, 100);
         });
     }
 
@@ -141,7 +146,7 @@
                 contentContainer.style.display = 'none';
                 contentContainer.innerHTML = '';
             }
-        }, 300);
+        }, 100);
     });
 
     // Handle mouse events on the document
