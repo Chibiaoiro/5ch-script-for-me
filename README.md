@@ -17,7 +17,7 @@
 Install on [Github Raw Content](https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/filter-script.user.js)  
   ![Static Badge](https://img.shields.io/badge/GitHub-raw_content-white?logo=GitHub&link=https%3A%2F%2Fgithub.com%2FChibiaoiro%2F5ch-script-for-me%2Fraw%2Fmain%2Ffilter-script.user.js)
 
-- レスホバースクリプト  
+- レスポップアップスクリプト  
   Install on [Github Raw Content](https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/filter-script.user.js)  
   ![Static Badge](https://img.shields.io/badge/GitHub-raw_content-white?logo=GitHub&link=https%3A%2F%2Fgithub.com%2FChibiaoiro%2F5ch-script-for-me%2Fraw%2Fmain%2Fhover-content.user.js)
   
