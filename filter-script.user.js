@@ -6,6 +6,7 @@
 // @description  スクリプト対策
 // @match        https://*.5ch.net/test/read.cgi/*
 // @grant        none
+// @license      MIT
 // @updateURL    https://raw.githubusercontent.com/Chibiaoiro/5ch-scripts/main/filter-script.user.js
 // @downloadURL  https://raw.githubusercontent.com/Chibiaoiro/5ch-scripts/main/filter-script.user.js
 // @supportURL   https://raw.githubusercontent.com/Chibiaoiro/5ch-scripts/main/filter-script.user.js
@@ -14,10 +15,10 @@
 (function() {
   'use strict';
 
-  // Select the target posts using the 'div.post' class
+  // "div.post" 選択
   const posts = document.querySelectorAll('div.post');
 
-  // Create the toggle button
+  // ボタン作り
   const toggleButton = document.createElement('div');
   toggleButton.style.position = 'absolute';
   toggleButton.style.top = '190px';
@@ -37,22 +38,22 @@
   toggleButton.style.fontSize = '14px';
   toggleButton.innerHTML = 'フィルター有効';
 
-  // Attach the toggle button to the document body
+  // ボタン付け
   document.body.appendChild(toggleButton);
 
-  // Hide the posts by default
+  // デフォルトでスクリプト消す
   let postsVisible = false;
   let filteredPostsCount = 0;
   showHidePosts(postsVisible);
 
-  // Add event listener to toggle the posts visibility when the button is clicked
+  // ボタンが押された時に消すイベントリスナー
   toggleButton.addEventListener('click', function() {
     postsVisible = !postsVisible;
     showHidePosts(postsVisible);
     updateToggleButton(postsVisible);
   });
 
-  // Function to show or hide the posts based on the provided visibility flag
+  // フラグでポストを消すか表すか
   function showHidePosts(visible) {
     filteredPostsCount = 0;
     posts.forEach(post => {
@@ -70,7 +71,7 @@
     console.log(`Filtered ${filteredPostsCount} post(s).`);
   }
 
-  // Function to update the toggle button text, title, and colors based on the current visibility state
+  // ボタンのテキスト、いろ、ポストの色を変える
   function updateToggleButton(visible) {
     toggleButton.style.background = visible ? 'white' : '#ffcccc';
     toggleButton.style.color = visible ? '#485269' : 'red';
