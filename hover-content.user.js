@@ -2,7 +2,7 @@
 // @name         5ch アンカーでポップアップ
 // @namespace    idk
 // @author.      Chibiaoiro
-// @version      1.0.2
+// @version      1.0.3
 // @description  昔の5chみたいな？　アンカーにカーソル合わせたらポップアップ出るようにするやつ。　なんでか最近できなくなったからね。
 // @match        https://*.5ch.net/*
 // @grant        none
@@ -15,6 +15,41 @@
 (function() {
     'use strict';
 
+    // Create loading logo or animation element
+    var loadingElement = document.createElement('div');
+    // Add loading logo or animation CSS styles
+    loadingElement.innerHTML = '<div class="loading-logo">Loading...</div>';
+    // Add loading logo or animation CSS styles
+    var loadingStyles = `
+        .loading-logo {
+            display: flex;
+            background-color: #efefef;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+    `;
+    loadingElement.insertAdjacentHTML('beforeend', '<style>' + loadingStyles + '</style>');
+
+    // Create error message element
+    var errorElement = document.createElement('div');
+    // Add error message CSS styles
+    errorElement.innerHTML = '<div class="error-message">Failed to load content.</div>';
+    // Add error message CSS styles
+    var errorStyles = `
+        .error-message {
+            display: flex;
+            background-color: #efefef;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            color: red;
+        }
+    `;
+    errorElement.insertAdjacentHTML('beforeend', '<style>' + errorStyles + '</style>');
+
     // リンクがパターンにマッチしてるか確認
     function matchesLinkPattern(url) {
         var pattern = /^https:\/\/[a-z]+\.5ch\.net\/test\/read\.cgi\/[a-z]?\/[a-z]+\/\d+\/\d+$/;
@@ -23,8 +58,19 @@
 
     // div.postをリンクから抽出
     function extractPostContent(url, callback) {
+        // Show loading logo or animation
+        contentContainer.innerHTML = '';
+        contentContainer.appendChild(loadingElement);
+        contentContainer.style.display = 'block';
+
         fetch(url)
-            .then(response => response.blob())
+            .then(response => {
+                if (response.ok) {
+                    return response.blob();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
             .then(blob => {
                 const reader = new FileReader();
                 reader.onloadend = function() {
@@ -34,11 +80,15 @@
                     var postElement = tempDiv.querySelector('div.post');
                     if (postElement) {
                         callback(postElement);
-                    }
                 };
                 reader.readAsText(blob, 'shift-jis');
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                console.error(error);
+                // Show error message
+                contentContainer.innerHTML = '';
+                contentContainer.appendChild(errorElement);
+            });
     }
 
     // 抽出したやつのためのコンテナ
