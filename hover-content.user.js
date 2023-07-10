@@ -1,8 +1,9 @@
 // ==UserScript==
-// @name         Hover Popup Links
-// @namespace    https://example.com
-// @version      1.0.1
-// @description  昔の5chみたいな？　知らんけどポップアップ出てくるやつ
+// @name         5ch アンカーでポップアップ
+// @namespace    idk
+// @author.      Chibiaoiro
+// @version      1.0.2
+// @description  昔の5chみたいな？　アンカーにカーソル合わせたらポップアップ出るようにするやつ。　なんでか最近できなくなったからね。
 // @match        https://*.5ch.net/*
 // @grant        none
 // @license      MIT
@@ -14,13 +15,13 @@
 (function() {
     'use strict';
 
-    // Function to check if a link matches the desired pattern
+    // リンクがパターンにマッチしてるか確認
     function matchesLinkPattern(url) {
         var pattern = /^https:\/\/[a-z]+\.5ch\.net\/test\/read\.cgi\/[a-z]?\/[a-z]+\/\d+\/\d+$/;
         return pattern.test(url);
     }
 
-    // Function to extract the 'div.post' element from the target URL
+    // div.postをリンクから抽出
     function extractPostContent(url, callback) {
         fetch(url)
             .then(response => response.blob())
@@ -40,12 +41,12 @@
             .catch(error => console.error(error));
     }
 
-    // Create a container for the extracted content
+    // 抽出したやつのためのコンテナ
     var contentContainer = document.createElement('div');
     contentContainer.id = 'hover-popup-content';
     document.body.appendChild(contentContainer);
 
-    // Apply CSS styles to the content container
+    // CSSのスタイルを↑に適応
     var styles = `
         #hover-popup-content {
             position: fixed;
@@ -64,45 +65,45 @@
     `;
     document.head.insertAdjacentHTML('beforeend', '<style>' + styles + '</style>');
 
-    // Variables to track the hover state of the link and the popup content
+    // ホバーしてるか
     var linkHovered = false;
     var contentHovered = false;
 
-    // Variable to store the initial position of the content container
+    // コンテナの初期位置
     var initialContainerX = 0;
     var initialContainerY = 0;
 
-    // Variable to store the timer for hiding the content container
+    // タイマー作る
     var hideTimer = null;
 
-    // Get all the links on the page
+    // リンクをゲット
     var links = document.getElementsByTagName('a');
 
-    // Loop through each link and modify the behavior
+    // リンクをループで動きを改造
     for (var i = 0; i < links.length; i++) {
         var link = links[i];
 
         link.addEventListener('mouseover', function(event) {
-            event.preventDefault(); // Prevent the link from opening in a new tab
+            event.preventDefault(); // 新しいタブを開くの阻止
 
-            // Check if the link matches the desired pattern
+            // パターンにマッチしてるか
             if (matchesLinkPattern(this.href)) {
-                // Extract the 'div.post' element from the target URL
+                // div.post　抽出
                 extractPostContent(this.href, function(postElement) {
-                    // Clear the content container
+                    // コンテナ初期化
                     contentContainer.innerHTML = '';
 
-                    // Append the extracted content to the content container
+                    // ↑をコンテナに追加
                     contentContainer.appendChild(postElement);
 
-                    // Display the content container
+                    // コンテナ表示
                     contentContainer.style.display = 'block';
 
-                    // Set the link hover state to true
+                    // リンクのホバーステート更新
                     linkHovered = true;
                 });
 
-                // Store the initial position of the content container
+                // 初期位置
                 initialContainerX = event.clientX + 20;
                 initialContainerY = event.clientY - contentContainer.offsetHeight;
             }
@@ -114,10 +115,10 @@
         });
 
         link.addEventListener('mouseout', function(event) {
-            // Set the link hover state to false
+            // リンクのホバーステート更新
             linkHovered = false;
 
-            // Hide the content container after 300 milliseconds if neither the link nor the content is hovered
+            // 300msで隠す
             hideTimer = setTimeout(function() {
                 if (!linkHovered && !contentHovered) {
                     contentContainer.style.display = 'none';
@@ -127,20 +128,20 @@
         });
     }
 
-    // Handle mouse events on the content container
+    // コンテナのマウスの処理
     contentContainer.addEventListener('mouseover', function(event) {
-        // Set the content hover state to true
+        // ホバーステート更新
         contentHovered = true;
 
-        // Clear the hide timer
+        // タイマー初期化
         clearTimeout(hideTimer);
     });
 
     contentContainer.addEventListener('mouseout', function(event) {
-        // Set the content hover state to false
+        // ホバーステートfalse
         contentHovered = false;
 
-        // Hide the content container after 300 milliseconds if neither the link nor the content is hovered
+        //　300msで隠す
         hideTimer = setTimeout(function() {
             if (!linkHovered && !contentHovered) {
                 contentContainer.style.display = 'none';
@@ -149,39 +150,39 @@
         }, 100);
     });
 
-    // Handle mouse events on the document
+    // ドキュメントのマウスイベント処理
     document.addEventListener('mousemove', function(event) {
-        // Update the position of the content container when the link is hovered
+        // コンテナの位置更新
         if (linkHovered) {
-            // Set the position of the content container to the initial position
+            // 初期位置
             contentContainer.style.left = initialContainerX + 'px';
             contentContainer.style.top = initialContainerY + 'px';
 
-            // Clear the hide timer if the link is re-hovered
+            // タイマー初期化もしまたホバー
             clearTimeout(hideTimer);
         }
     });
 
-    // Handle mouseover events on the content container (event delegation for links inside the popup)
+    // マウスオーバー処理
     contentContainer.addEventListener('mouseover', function(event) {
         var target = event.target;
         if (target.tagName === 'A' && matchesLinkPattern(target.href)) {
-            // Extract the 'div.post' element from the target URL
+            // 絶対無駄なのあるやんこんなん
             extractPostContent(target.href, function(postElement) {
-                // Clear the content container
+                // コンテナ初期化
                 contentContainer.innerHTML = '';
 
-                // Append the extracted content to the content container
+                // ↑コンテナに追加
                 contentContainer.appendChild(postElement);
 
-                // Display the content container
+                // コンテナ表示
                 contentContainer.style.display = 'block';
 
-                // Set the link hover state to true
+                // ステート更新
                 linkHovered = true;
             });
 
-            // Store the initial position of the content container
+            // 初期位置
             initialContainerX = event.clientX + 20;
             initialContainerY = event.clientY - contentContainer.offsetHeight;
         }
