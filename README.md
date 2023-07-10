@@ -7,16 +7,19 @@
 もっといい書き方があるかもしれないけど、プログラミング初心者の私にはコレが精一杯です。😞  
 # ⬇️ インストール ⬇️  
 - URLのやつ  
-   Install on [Github Raw Content](https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/url-change-5ch.user.js)  
+  Install on [Github Raw Content](https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/url-change-5ch.user.js)  
   ![Static Badge](https://img.shields.io/badge/GitHub-raw_content-white?logo=GitHub&link=https%3A%2F%2Fgithub.com%2FChibiaoiro%2F5ch-script-for-me%2Fraw%2Fmain%2Furl-change-5ch.user.js)
 
   Install on [GreasyFork](https://greasyfork.org/ja/scripts/470038-5ch-open2ch-url-改変スクリプト)   
   ![Greasy Fork](https://img.shields.io/greasyfork/dt/470038?color=red&link=https%3A%2F%2Fgreasyfork.org%2Fja%2Fscripts%2F470038-5ch-open2ch-url-%E6%94%B9%E5%A4%89%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88)
 
 - 横棒の変なスクリプト(?)を消すやつ  
-Install on [Github Raw Content](https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/filter-script.user.js)  
+  Install on [Github Raw Content](https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/filter-script.user.js)  
   ![Static Badge](https://img.shields.io/badge/GitHub-raw_content-white?logo=GitHub&link=https%3A%2F%2Fgithub.com%2FChibiaoiro%2F5ch-script-for-me%2Fraw%2Fmain%2Ffilter-script.user.js)
 
+  Install on [GreasyFork](https://greasyfork.org/ja/scripts/470038-5ch-open2ch-url-改変スクリプト)  
+  ![Greasy Fork](https://img.shields.io/greasyfork/dt/470532?color=red&link=https%3A%2F%2Fgreasyfork.org%2Fja%2Fscripts%2F470038-5ch-open2ch-url-%E6%94%B9%E5%A4%89%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88)
+  
 - レスポップアップスクリプト  
   Install on [Github Raw Content](https://github.com/Chibiaoiro/5ch-script-for-me/raw/main/filter-script.user.js)  
   ![Static Badge](https://img.shields.io/badge/GitHub-raw_content-white?logo=GitHub&link=https%3A%2F%2Fgithub.com%2FChibiaoiro%2F5ch-script-for-me%2Fraw%2Fmain%2Fhover-content.user.js)
