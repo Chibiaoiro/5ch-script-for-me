@@ -4,7 +4,7 @@
 // @author.      Chibiaoiro
 // @version      1.0.3
 // @description  昔の5chみたいな？　アンカーにカーソル合わせたらポップアップ出るようにするやつ。　なんでか最近できなくなったからね。
-// @match        https://*.5ch.net/*
+// @match        https://*.5ch.net/test/read.cgi/*
 // @grant        none
 // @license      MIT
 // @supportURL   https://github.com/Chibiaoiro/5ch-scripts
