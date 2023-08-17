@@ -2,7 +2,7 @@
 // @name         5ch 横棒のレスを消すやつ
 // @namespace    idk
 // @author       Chibiaoiro
-// @version      1.0.3
+// @version      1.0.3.1
 // @description  スクリプト対策
 // @match        https://*.5ch.net/test/read.cgi/*
 // @grant        none
@@ -58,7 +58,7 @@
     filteredPostsCount = 0;
     posts.forEach(post => {
       const escapedSpan = post.querySelector('span.escaped');
-      if (escapedSpan && /^[=-]+$/.test(escapedSpan.textContent.trim())) {
+      if (escapedSpan && /^[=-＿]+$/.test(escapedSpan.textContent.trim())) {
         const nextElement = post.nextElementSibling;
         if (nextElement && nextElement.tagName.toLowerCase() === 'br') {
           nextElement.style.display = visible ? 'block' : 'none';
