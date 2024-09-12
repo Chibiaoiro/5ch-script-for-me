@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         5ch-open2ch-URL-改変スクリプト
 // @namespace    idk
-// @version      1.0.9
-// @description  5ch, open2chで簡単なurlの改変を行うスクリプト. (クラシック版強制、全表示強制）built with help of ChatGPT.
+// @version      2.0.0
+// @description  5ch, open2chで簡単なurlの改変を行うスクリプト. (全表示強制）built with help of ChatGPT.
 // @author       Chibiaoiro
 // @match        https://*.open2ch.net/*
 // @match        https://*.5ch.net/*
@@ -32,18 +32,19 @@
                     //5ch.net
                     if (currentUrl.includes("5ch.net")){
                          //5ch.home.page
-                        if (currentUrl == 'https://5ch.net/' && !href.includes("/read.cgi/c/")){
+                     /* if (currentUrl == 'https://5ch.net/' && !href.includes("/read.cgi/c/")){
                           var modifiedUrl = href.replace("/read.cgi/", "/read.cgi/c/");
                           link.setAttribute('href', modifiedUrl);
                           console.log("The [5ch.home.page] worked on this site");
-                        }//5ch.primary(この行削除で5chでの強制全表示の機能無効化)
+                        }*/
+                        //5ch.primary(この行削除で5chでの強制全表示の機能無効化)
                         if ((href.includes("/l50")) && !currentUrl.includes("/test/read.cgi/")){
-                          var modifiedUrl = href.replace("/read.cgi/", "/read.cgi/c/");
-                          modifiedUrl = modifiedUrl.replace("/l50", "");
+                          //var modifiedUrl = href.replace("/read.cgi/", "/read.cgi/c/");
+                          var modifiedUrl = href.replace("/l50", "");
                           link.setAttribute('href', modifiedUrl);
                           console.log("The [5ch.primary] worked on this site");
                         }//5ch.find.page
-                        if (currentUrl.includes('find.5ch.net/') && !href.includes("/read.cgi/c/")){
+                     /* if (currentUrl.includes('find.5ch.net/') && !href.includes("/read.cgi/c/")){
                           var modifiedUrl = href.replace("/read.cgi/", "/read.cgi/c/");
                           link.setAttribute('href', modifiedUrl);
                           console.log("The [5ch.find.page] worked on this site");
@@ -52,7 +53,7 @@
                           var modifiedUrl = href.replace("/read.cgi/", "/read.cgi/c/");
                           link.setAttribute('href', modifiedUrl);
                           console.log("The [5ch.read.cgi] worked on this site");
-                        }
+                        }*/
                     }
 
                     //open2ch(この行削除でopen2chでの強制全表示の機能無効化)
